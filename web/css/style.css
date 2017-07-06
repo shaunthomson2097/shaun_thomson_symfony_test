@@ -1,0 +1,41 @@
+body {
+    background-color: #919191!important;
+}
+
+textarea {
+   resize: none;
+}
+
+ .active a{
+    background-color: #1697E5 !important;
+}
+
+a{
+   transition: background-color 0.5s ease;
+}
+
+a:hover{
+   background-color: #1697E5 !important;
+}
+
+#mail_chimp_form_subscribe_0 {
+    width: 50px!important;
+    height: 50px!important;
+}
+
+.checkbox-style {
+    position: relative;
+    font-size: 30px;
+}
+
+.font-white {
+    color: #ffffff;
+}
+
+.font-grey {
+    color: grey!important;
+}
+
+.margin-top-50 {
+    margin-top: 50px;
+}

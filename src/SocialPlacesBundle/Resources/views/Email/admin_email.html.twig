@@ -1,0 +1,105 @@
+{% block body %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="format-detection" content="telephone=no" /> <!-- disable auto telephone linking in iOS -->
+        <title>Registration</title>
+        <style media="screen">
+        table, th, td {
+            border: 1px solid #bcbcbc;
+            border-collapse: collapse;
+            }
+            th, td {
+            padding: 5px;
+            text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <table style="margin: 50px auto; border: 1px solid #bcbcbc; padding: 80px;" width="500" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <th align="center" colspan="2"><h1 style="text-align: center; color: #792B82; font-family:arial;">New Registration</h1>
+            </tr>
+            <tr>
+                <th align="">
+                    Name:
+                </th>
+                <td align="">
+                    {{contact.firstname}}
+                </td>
+            </tr>
+            <tr>
+                <th align="">
+                    Surname:
+                </th>
+                <td align="">
+                    {{contact.lastname}}
+                </td>
+            </tr>
+            <tr>
+                <th align="">
+                    Email Address:
+                </th>
+                <td align="">
+                    {{contact.email}}
+                </td>
+            </tr>
+            <tr>
+                <th align="">
+                    Phone Number:
+                </th>
+                <td align="">
+                    {{contact.contactNumber}}
+                </td>
+            </tr>
+            <tr>
+                <th align="">
+                    Date of Birth:
+                </th>
+                <td align="">
+                    {{contact.dob | date("Y-m-d")}}
+                </td>
+            </tr>
+            <tr>
+                <th align="" rowspan="5">
+                    Address:
+                </th>
+                <td align="">
+                    {{contact.street}}
+                </td>
+            </tr>
+            <tr>
+                <td align="">
+                    {{contact.suburb}}
+                </td>
+            </tr>
+            <tr>
+                <td align="">
+                    {{contact.city}}
+                </td>
+            </tr>
+            <tr>
+                <td align="">
+                    {{contact.province}}
+                </td>
+            </tr>
+            <tr>
+                <td align="">
+                    {{contact.poBox}}
+                </td>
+            </tr>
+            <tr>
+                <th align="">
+                    Notes:
+                </th>
+                <td align="">
+                    {{contact.notes}}
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% block body %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="format-detection" content="telephone=no" /> <!-- disable auto telephone linking in iOS -->
+        <title>Registration</title>
+    </head>
+    <body>
+        <table style="margin: 50px auto; border: 1px solid #bcbcbc; padding: 80px;" width="600" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td align="center">
+                    <h1 style="color: #792B82; font-family:arial;">Thank you {{contact.firstname}}!</h1>
+                    <br>
+                    <p style="font-style: italic; font-family: 'Lora', serif; font-size:20px;">We have received your registration.</p>
+                    <br>
+                    <div align="center" style="border-top: 1px solid #792B82; width: 400px; padding-top: 20px;">
+
+                    </div>
+                    <p style="font-style: italic; font-family: 'Lora', serif; font-size:20px;">Questions?</p>
+                    <p style="font-weight: italic; font-family:arial;">Tel 000 000 0000</p>
+                    <p style="font-weight: italic; font-family:arial;"><a href="mailto:info@nonexistingemail.com"></a>info@nonexistingemail.com</p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
+{% endblock %}

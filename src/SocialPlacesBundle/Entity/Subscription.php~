@@ -1,0 +1,97 @@
+<?php
+
+// src/SocialPlacesBundle/Entity/Contacts.php
+namespace SocialPlacesBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
+use EWZ\Bundle\RecaptchaBundle\Validator\Constraints as Recaptcha;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="contacts")
+ */
+class Subscription
+{
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $email;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $status;
+
+    /**
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    public function __tostring() {
+
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return Contacts
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Contacts
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+}

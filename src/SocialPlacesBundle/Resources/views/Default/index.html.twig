@@ -1,0 +1,117 @@
+{% extends 'SocialPlacesBundle:Default:base.html.twig' %}
+
+{% block body %}
+<div class="container-fluid font-white">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Hi There</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Please Complete The Following Registration.</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            {{ form_start(form) }}
+            <div class="center-element">
+            <div class="form-group">
+                <label for="firstname">Firstname:</label>
+                <br>
+                {{ form_errors(form.firstname) }}
+                {{ form_widget(form.firstname, {'attr': {'class': 'form-control', 'placeholder': 'Your Name*'}}) }}
+            </div>
+            <div class="form-group">
+                <label for="lastname">Surname:</label>
+                <br>
+                {{ form_errors(form.lastname) }}
+                {{ form_widget(form.lastname, {'attr': {'class': 'form-control', 'placeholder': 'Your Surname*'}}) }}
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <br>
+                {{ form_errors(form.email) }}
+                {{ form_widget(form.email, {'attr': {'class': 'form-control controls-select-width-custom input-font', 'placeholder': 'Email Address*'}}) }}
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <br>
+                {{ form_errors(form.contactNumber) }}
+                {{ form_widget(form.contactNumber, {'attr': {'class': 'form-control controls-select-width-custom input-font', 'placeholder': 'Phone Number*'}}) }}
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <br>
+                {{ form_errors(form.dob) }}
+                {{ form_widget(form.dob, {'attr': {'class': 'form-control controls-select-width-custom input-font', 'placeholder': 'Date of Birth*'}}) }}
+            </div>
+            <div class="form-group">
+                <label for="Address">Address</label>
+                <div class="row">
+                    <div class="col-xs-12">
+                        {{ form_errors(form.street) }}
+                        {{ form_widget(form.street, {'attr': {'class': 'form-control controls-select-width-custom margin-bottom-5 input-font', 'placeholder': 'Street'}}) }}
+                    </div>
+                    <div class="col-xs-12 margin-top-15">
+                        {{ form_errors(form.suburb) }}
+                        {{ form_widget(form.suburb, {'attr': {'class': 'form-control controls-select-width-custom margin-bottom-5 input-font', 'placeholder': 'Suburb'}}) }}
+                    </div>
+                    <div class="col-xs-12 margin-top-15">
+                        {{ form_errors(form.city) }}
+                        {{ form_widget(form.city, {'attr': {'class': 'form-control controls-select-width-custom margin-bottom-5 input-font', 'placeholder': 'City'}}) }}
+                    </div>
+                    <div class="col-xs-12 margin-top-15">
+                        {{ form_errors(form.province) }}
+                        {{ form_widget(form.province, {'attr': {'class': 'form-control controls-select-width-custom margin-bottom-5 input-font', 'placeholder': 'Province'}}) }}
+                    </div>
+                    <div class="col-xs-12 margin-top-15">
+                        {{ form_errors(form.poBox) }}
+                        {{ form_widget(form.poBox, {'attr': {'class': 'form-control controls-select-width-custom margin-bottom-5 input-font', 'placeholder': 'P.O. Box'}}) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Notes">Notes</label><br>
+                {{ form_errors(form.notes) }}
+                {{ form_widget(form.notes, {'attr': {'class': 'form-control controls-select-width-custom margin-bottom-5 input-font', 'placeholder': 'Notes'}}) }}
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-row">
+                        <div hidden class="validateCaptcha">
+                            <h3 class="alert alert-danger text-center" role="alert">Please complete captcha to send email!</h3>
+                        </div>
+                        {% form_theme form 'EWZRecaptchaBundle:Form:ewz_recaptcha_widget.html.twig' %}
+
+                        {{
+                          form_widget(form.recaptcha, { 'attr': {
+                          'options' : {
+                              'theme': 'light',
+                              'type': 'image',
+                              'size': 'normal'
+                          },
+                      } })
+                        }}
+                    </div>
+                    {% if captchaError is defined and captchaError is not null %}
+                    <div class="validateCaptcha topmargin-15 text-center">
+                        <div class="label label-danger text-uppercase" role="alert">Please complete captcha to send email!</div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group padding-top-20">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <input class="btn btn-primary btn-lg" type="submit" value="Submit">
+                        <a class="btn btn-success btn-lg" href="/clients">Cancel</a>
+                    </div>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
